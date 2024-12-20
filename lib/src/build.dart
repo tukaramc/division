@@ -97,7 +97,7 @@ class CoreBuild extends StatelessWidget {
 
     if (styleModel?.backgroundBlur != null) {
       widgetTree = ClipRRect(
-        borderRadius: decoration?.borderRadius as BorderRadius?,
+        borderRadius: decoration?.borderRadius ?? BorderRadius.zero,
         child: BackdropFilter(
           filter: ImageFilter.blur(
             sigmaX: styleModel!.backgroundBlur!,
