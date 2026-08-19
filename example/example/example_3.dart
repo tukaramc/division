@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:division/division.dart';
 
 void main() => runApp(Main());
@@ -50,7 +50,7 @@ class Home extends StatelessWidget {
 
   final TxtStyle undertitleStyle = TxtStyle()
     ..margin(left: 20)
-    ..textColor(Colors.black.withOpacity(0.8))
+    ..textColor(Colors.black.withValues(alpha: 0.8))
     ..bold()
     ..fontSize(22)
     ..textAlign.left();
@@ -58,7 +58,7 @@ class Home extends StatelessWidget {
   final colorCardStyle =
       (ParentStyle tasksCard, Color color) => tasksCard.clone()
         ..background.color(color)
-        ..elevation(20, color: color.withOpacity(0.5));
+        ..elevation(20, color: color.withValues(alpha: 0.5));
 
   Widget _buildTasksCardRow() {
     return SizedBox(

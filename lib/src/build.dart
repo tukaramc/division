@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'model.dart';
 
@@ -18,12 +18,11 @@ class CoreBuild extends StatelessWidget {
   final BoxConstraints? constraints;
 
   EdgeInsetsGeometry? get _paddingIncludingDecoration {
-    if (decoration == null || decoration!.padding == null)
-      return styleModel?.padding;
-    final EdgeInsetsGeometry? decorationPadding = decoration!.padding;
+    final EdgeInsetsGeometry? decorationPadding = decoration?.padding;
+    if (decorationPadding == null) return styleModel?.padding;
     if (styleModel?.padding == null) return decorationPadding;
     final EdgeInsetsGeometry padding = styleModel!.padding!;
-    return padding.add(decorationPadding!);
+    return padding.add(decorationPadding);
   }
 
   @override
@@ -256,7 +255,7 @@ class _TxtBuildEditableState extends State<TxtBuildEditable> {
 
   void _updatePlaceholderTextStyle() {
     _placeholderTextStyle = widget.textStyle?.copyWith(
-      color: widget.textStyle?.color?.withOpacity(0.7) ?? Colors.grey,
+      color: widget.textStyle?.color?.withValues(alpha: 0.7) ?? Colors.grey,
       fontWeight: FontWeight.normal,
     );
   }

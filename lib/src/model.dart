@@ -1,5 +1,5 @@
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'function/hex_color.dart';
 // import 'style.dart';
@@ -305,10 +305,17 @@ class StyleModel {
 
     if ((scale ?? rotate ?? offset) != null) {
       return Matrix4.rotationZ(rotate ?? 0.0)
-        ..scale(scale ?? 1.0)
-        ..translate(
+        ..scaleByDouble(
+          scale ?? 1.0,
+          scale ?? 1.0,
+          1.0,
+          1.0,
+        )
+        ..translateByDouble(
           offset?.dx ?? 0.0,
           offset?.dy ?? 0.0,
+          0.0,
+          0.0,
         );
     }
     return null;

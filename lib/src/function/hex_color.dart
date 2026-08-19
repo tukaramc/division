@@ -1,5 +1,5 @@
 // from '#123456' or '123456' -> Color(0xFF123456)
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class HexColor extends Color {
   static int _getColorFromHex(String hexColor) {

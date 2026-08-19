@@ -1,7 +1,7 @@
 // App design: https://dribbble.com/shots/6459693-Creative-layout-design
 
 import 'package:division/division.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(Main());
 
@@ -125,7 +125,7 @@ class UserCard extends StatelessWidget {
     ..fontWeight(FontWeight.w600);
 
   final TxtStyle nameDescriptionTextStyle = TxtStyle()
-    ..textColor(Colors.white.withOpacity(0.6))
+    ..textColor(Colors.white.withValues(alpha: 0.6))
     ..fontSize(12);
 }
 
@@ -170,7 +170,7 @@ class ActionsRow extends StatelessWidget {
   final ParentStyle actionsItemStyle = ParentStyle()..margin(vertical: 20.0);
 
   final TxtStyle actionsItemTextStyle = TxtStyle()
-    ..textColor(Colors.black.withOpacity(0.8))
+    ..textColor(Colors.black.withValues(alpha: 0.8))
     ..fontSize(12);
 }
 

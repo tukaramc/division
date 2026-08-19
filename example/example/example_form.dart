@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:division/division.dart';
 
 void main() => runApp(Main());
@@ -43,7 +43,7 @@ class _TestState extends State<Test> {
   final TxtStyle submitButtonStyle = TxtStyle()
     ..textColor(Colors.white)
     ..bold()
-    ..ripple(true, splashColor: Colors.white.withOpacity(0.1))
+    ..ripple(true, splashColor: Colors.white.withValues(alpha: 0.1))
     ..alignment.centerLeft()
     ..textAlign.center()
     ..width(150)
