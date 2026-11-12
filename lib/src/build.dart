@@ -45,7 +45,6 @@ class CoreBuild extends StatelessWidget {
     if (effectivePadding != null)
       widgetTree = Padding(padding: effectivePadding, child: widgetTree);
 
-    // ignore: missing_enum_constant_in_switch
     switch (styleModel?.overflow) {
       case OverflowType.scroll:
         widgetTree = SingleChildScrollView(
@@ -67,6 +66,8 @@ class CoreBuild extends StatelessWidget {
                 ? double.infinity
                 : null,
             alignment: styleModel?.alignmentContent ?? Alignment.topCenter);
+        break;
+      case null:
         break;
     }
 
